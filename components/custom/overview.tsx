@@ -20,29 +20,19 @@ export const Overview = () => {
           <MessageIcon />
         </p>
         <p>
-          This is an open source Chatbot template powered by the Google Gemini
-          model built with Next.js and the AI SDK by Vercel. It uses the{" "}
-          <code className="rounded-sm bg-muted-foreground/15 px-1.5 py-0.5">
-            streamText
-          </code>{" "}
-          function in the server and the{" "}
-          <code className="rounded-sm bg-muted-foreground/15 px-1.5 py-0.5">
-            useChat
-          </code>{" "}
-          hook on the client to create a seamless chat experience.
+          Conheça Michel, sua assistente de compras inteligente! Michel ajuda você a encontrar os produtos certos, com sugestões personalizadas e atendimento rápido. Criada com o poder da IA, Michel oferece uma experiência de chat fluida e eficiente para que suas compras sejam mais fáceis e rápidas.
         </p>
-        <p>
-          {" "}
-          You can learn more about the AI SDK by visiting the{" "}
+        {/* <p>
+          Para saber mais sobre a tecnologia por trás da Michel, visite a{" "}
           <Link
             className="text-blue-500 dark:text-blue-400"
             href="https://sdk.vercel.ai/docs"
             target="_blank"
           >
-            Docs
+            documentação do AI SDK
           </Link>
           .
-        </p>
+        </p> */}
       </div>
     </motion.div>
   );
