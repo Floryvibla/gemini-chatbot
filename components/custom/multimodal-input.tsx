@@ -21,14 +21,14 @@ import { Textarea } from "../ui/textarea";
 
 const suggestedActions = [
   {
-    title: "Help me book a flight",
-    label: "from San Francisco to London",
-    action: "Help me book a flight from San Francisco to London",
+    title: "Quais são as ofertas do dia?",
+    label: "Veja as melhores ofertas de hoje",
+    action: "Quais são as melhores ofertas de hoje?",
   },
   {
-    title: "What is the status",
-    label: "of flight BA142 flying tmrw?",
-    action: "What is the status of flight BA142 flying tmrw?",
+    title: "Sugestões de presentes",
+    label: "para aniversário de 30 anos",
+    action: "Me sugira presentes para um aniversário de 30 anos",
   },
 ];
 
