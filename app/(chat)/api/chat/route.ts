@@ -1,7 +1,7 @@
 import { convertToCoreMessages, Message, streamText } from "ai";
 import { z } from "zod";
 
-import { geminiProModel } from "@/ai";
+import { geminiFlashModel, geminiProModel } from "@/ai";
 import {
   generateReservationPrice,
   generateSampleFlightSearchResults,
@@ -24,16 +24,16 @@ export async function POST(request: Request) {
 
   const session = await auth();
 
-  if (!session) {
-    return new Response("Unauthorized", { status: 401 });
-  }
+  // if (!session) {
+  //   return new Response("Unauthorized", { status: 401 });
+  // }
 
   const coreMessages = convertToCoreMessages(messages).filter(
     (message) => message.content.length > 0,
   );
 
   const result = await streamText({
-    model: geminiProModel,
+    model: geminiFlashModel,
     system: `\n
         - you help users book flights!
         - keep your responses limited to a sentence.
@@ -215,17 +215,17 @@ export async function POST(request: Request) {
       },
     },
     onFinish: async ({ responseMessages }) => {
-      if (session.user && session.user.id) {
-        try {
-          await saveChat({
-            id,
-            messages: [...coreMessages, ...responseMessages],
-            userId: session.user.id,
-          });
-        } catch (error) {
-          console.error("Failed to save chat");
-        }
-      }
+      // if (session.user && session.user.id) {
+      //   try {
+      //     await saveChat({
+      //       id,
+      //       messages: [...coreMessages, ...responseMessages],
+      //       userId: session.user.id,
+      //     });
+      //   } catch (error) {
+      //     console.error("Failed to save chat");
+      //   }
+      // }
     },
     experimental_telemetry: {
       isEnabled: true,
